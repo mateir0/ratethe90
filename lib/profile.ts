@@ -11,7 +11,7 @@ export async function ensureProfile(client: SupabaseClient, user: User) {
   const base = usernameFromEmail(user.email);
   for (let i = 0; i < 5; i++) {
     const candidate = i === 0 ? base : `${base}${Math.floor(Math.random() * 1000)}`;
-    const { error } = await client.from("profiles").insert({ id: user.id, username: candidate, display_name: user.email });
+    const { error } = await client.from("profiles").insert({ id: user.id, username: candidate, display_name: null });
     if (!error) return;
     if (!String(error.message).toLowerCase().includes("username")) throw error;
   }

@@ -103,14 +103,15 @@ export function LogMatchSheet({ open, onClose, match }: Props) {
           <label className="flex items-center gap-2"><input type="checkbox" checked={attended} onChange={(e) => setAttended(e.target.checked)} /> Attended</label>
           {attended && (
             <>
-              <input className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
-              <input className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} />
-              <textarea className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)} />
+              <input aria-label="Stadium" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
+              <input aria-label="Stadium" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
+              <input aria-label="City" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} />
+              <textarea aria-label="Attendance notes" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)} />
             </>
           )}
           <RatingInput value={rating} onChange={setRating} />
-          <textarea maxLength={800} className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Review (max 800)" value={review} onChange={(e) => setReview(e.target.value)} />
-          <select value={visibility} onChange={(e) => setVisibility(e.target.value as "public" | "private")} className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2">
+          <textarea aria-label="Review" maxLength={800} className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Review (max 800)" value={review} onChange={(e) => setReview(e.target.value)} />
+          <select aria-label="Visibility" value={visibility} onChange={(e) => setVisibility(e.target.value as "public" | "private")} className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2">
             <option value="public">Public</option>
             <option value="private">Private</option>
           </select>

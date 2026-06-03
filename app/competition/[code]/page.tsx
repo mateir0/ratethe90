@@ -28,8 +28,8 @@ export default function CompetitionPage() {
     <AppShell>
       <main className="space-y-4">
         <h1 className="text-2xl font-bold">{code}</h1>
-        <label className="text-sm text-[#94A3B8]">Date</label>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded border border-[#22304A] bg-[#111B2E] p-2" />
+        <label htmlFor="match-date" className="text-sm text-[#94A3B8]">Date</label>
+        <input id="match-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded border border-[#22304A] bg-[#111B2E] p-2" />
         <div className="space-y-3">
           {isLoading && Array.from({ length: 5 }).map((_, i) => <SkeletonMatchRow key={i} />)}
           {!isLoading && !!data?.error && <EmptyState title="Could not load matches" description={data.error} />}

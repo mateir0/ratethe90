@@ -66,7 +66,8 @@ create policy if not exists "profiles owner insert" on public.profiles for inser
 create policy if not exists "profiles owner update" on public.profiles for update using (auth.uid() = id) with check (auth.uid() = id);
 
 create policy if not exists "matches public read" on public.matches for select using (true);
-create policy if not exists "matches auth write" on public.matches for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy if not exists "matches auth insert" on public.matches for insert with check (auth.role() = 'authenticated');
+create policy if not exists "matches auth update" on public.matches for update using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
 
 create policy if not exists "match logs public read" on public.match_logs for select using (visibility = 'public' or auth.uid() = user_id);
 create policy if not exists "match logs owner insert" on public.match_logs for insert with check (auth.uid() = user_id);

@@ -22,7 +22,7 @@ export default function SearchPage() {
     <AppShell>
       <main className="space-y-4">
         <h1 className="text-2xl font-bold">Search</h1>
-        <input className="w-full rounded border border-[#22304A] bg-[#111B2E] p-3" placeholder="Search by team" value={q} onChange={(e) => setQ(e.target.value)} />
+        <input aria-label="Search by team" className="w-full rounded border border-[#22304A] bg-[#111B2E] p-3" placeholder="Search by team" value={q} onChange={(e) => setQ(e.target.value)} />
         {isFetching && <p className="text-sm text-[#94A3B8]">Searching...</p>}
         <div className="space-y-3">
           {data?.matches?.map((match) => <MatchRow key={match.providerMatchId} match={match} />)}

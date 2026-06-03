@@ -17,7 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className="h-full">
       <body className="min-h-full bg-[#0B1220] text-[#E5E7EB] antialiased">
         <Providers>{children}</Providers>
-        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch((error)=>console.error('Service worker registration failed',error)));}` }} />
       </body>
     </html>
   );
