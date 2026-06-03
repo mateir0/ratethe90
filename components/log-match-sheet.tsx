@@ -104,7 +104,6 @@ export function LogMatchSheet({ open, onClose, match }: Props) {
           {attended && (
             <>
               <input aria-label="Stadium" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
-              <input aria-label="Stadium" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
               <input aria-label="City" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} />
               <textarea aria-label="Attendance notes" className="w-full rounded border border-[#22304A] bg-[#0B1220] p-2" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)} />
             </>
