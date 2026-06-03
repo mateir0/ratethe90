@@ -31,6 +31,7 @@ export function ScoreSpoiler({ matchId, home, away, status }: Props) {
               setRevealed(true);
               setRevealedScore(matchId);
             }}
+            aria-label="Reveal score for this match"
             className="text-xs text-[#A3E635] underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A3E635]"
           >
             Reveal score

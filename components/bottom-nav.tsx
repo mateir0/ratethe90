@@ -15,7 +15,7 @@ const items = [
 export function BottomNav() {
   const pathname = usePathname();
   return (
-    <nav className="fixed bottom-0 inset-x-0 mx-auto max-w-md border-t border-[#22304A] bg-[#111B2E]/95 backdrop-blur z-40">
+    <nav aria-label="Main navigation" className="fixed bottom-0 inset-x-0 mx-auto max-w-md border-t border-[#22304A] bg-[#111B2E]/95 backdrop-blur z-40">
       <ul className="grid grid-cols-5">
         {items.map((item) => {
           const ActiveIcon = item.icon;
